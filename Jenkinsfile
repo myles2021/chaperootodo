@@ -18,6 +18,8 @@ pipeline{
                 steps{
                     script{
                         if (env.rollback == 'false'){
+                            def registry_url = "registry.hub.docker.com/"
+                            bat "docker login -u myles2021 -p $PASSWORD ${registry_url}"
                             docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){
                                 image.push("${env.app_version}")
                             }
