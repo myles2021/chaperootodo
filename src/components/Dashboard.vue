@@ -35,4 +35,5 @@ export default {
   border-top-right-radius: 1em;
 }
 
+
 </style>
